@@ -6,5 +6,7 @@ Notes:
 
 11/21/2023
 -----------
-start with the basic main function 
+- Start with the basic main function 
+- Create a test program
+- Begin writing the experssion evaluator
 
