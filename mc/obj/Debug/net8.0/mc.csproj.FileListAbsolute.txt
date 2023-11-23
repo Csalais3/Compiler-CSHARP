@@ -1,0 +1,15 @@
+C:\Users\daimo\Compiler-CSHARP\mc\bin\Debug\net8.0\mc.exe
+C:\Users\daimo\Compiler-CSHARP\mc\bin\Debug\net8.0\mc.deps.json
+C:\Users\daimo\Compiler-CSHARP\mc\bin\Debug\net8.0\mc.runtimeconfig.json
+C:\Users\daimo\Compiler-CSHARP\mc\bin\Debug\net8.0\mc.dll
+C:\Users\daimo\Compiler-CSHARP\mc\bin\Debug\net8.0\mc.pdb
+C:\Users\daimo\Compiler-CSHARP\mc\obj\Debug\net8.0\mc.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\daimo\Compiler-CSHARP\mc\obj\Debug\net8.0\mc.AssemblyInfoInputs.cache
+C:\Users\daimo\Compiler-CSHARP\mc\obj\Debug\net8.0\mc.AssemblyInfo.cs
+C:\Users\daimo\Compiler-CSHARP\mc\obj\Debug\net8.0\mc.csproj.CoreCompileInputs.cache
+C:\Users\daimo\Compiler-CSHARP\mc\obj\Debug\net8.0\mc.sourcelink.json
+C:\Users\daimo\Compiler-CSHARP\mc\obj\Debug\net8.0\mc.dll
+C:\Users\daimo\Compiler-CSHARP\mc\obj\Debug\net8.0\refint\mc.dll
+C:\Users\daimo\Compiler-CSHARP\mc\obj\Debug\net8.0\mc.pdb
+C:\Users\daimo\Compiler-CSHARP\mc\obj\Debug\net8.0\mc.genruntimeconfig.cache
+C:\Users\daimo\Compiler-CSHARP\mc\obj\Debug\net8.0\ref\mc.dll
