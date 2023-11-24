@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xfhY7czeMvgq8busgZyTNKBQ9WACfHW3smrVj81PTu9Tzrv1XpGVaDp8i/UDuZTA9rP61OfG605qahwZ3NcZTg==",
+  "dgSpecHash": "y8wAsn5fDXPVN09vdnChZ+Ug23478gBKRyMIeknSejFUKUFfVh1sGJV2LuP3WROipUzaMbsG9c0CXt+hhqP5JA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\daimo\\Compiler-CSHARP\\mc\\mc.csproj",
+  "projectFilePath": "c:\\Users\\daimo\\Compiler-CSHARP\\mc\\mc.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
