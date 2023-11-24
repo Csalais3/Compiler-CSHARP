@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\daimo\\Compiler-CSHARP\\mc\\mc.csproj": {}
+    "C:\\Users\\daimo\\Compiler-CSHARP\\mc\\mc.csproj": {}
   },
   "projects": {
-    "c:\\Users\\daimo\\Compiler-CSHARP\\mc\\mc.csproj": {
+    "C:\\Users\\daimo\\Compiler-CSHARP\\mc\\mc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\daimo\\Compiler-CSHARP\\mc\\mc.csproj",
+        "projectUniqueName": "C:\\Users\\daimo\\Compiler-CSHARP\\mc\\mc.csproj",
         "projectName": "mc",
-        "projectPath": "c:\\Users\\daimo\\Compiler-CSHARP\\mc\\mc.csproj",
+        "projectPath": "C:\\Users\\daimo\\Compiler-CSHARP\\mc\\mc.csproj",
         "packagesPath": "C:\\Users\\daimo\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\daimo\\Compiler-CSHARP\\mc\\obj\\",
+        "outputPath": "C:\\Users\\daimo\\Compiler-CSHARP\\mc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\daimo\\AppData\\Roaming\\NuGet\\NuGet.Config"
