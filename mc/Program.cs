@@ -1,7 +1,26 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
+using System.Security.Principal;
 
 namespace mc {
+
+    // representation of 1 + 2 * 3
+    //
+    //     +        - Leaf Nodes are the tokens in the input file
+    //    / \       - Root is the binary operator
+    //   1   *      - Computes by traversing along the tree
+    //      / \ 
+    //     2   3
+
+
+    // representation of 1 + 2 + 3
+    //
+    //     +        
+    //    / \       
+    //   +   3      
+    //  / \ 
+    // 1   2
+
     class Program {
         static void Main(string[] args) {
             while (true) {
@@ -36,6 +55,8 @@ namespace mc {
         CloseParenthesisToken,
         InvalidToken,
         EndOfFileToken,
+        NumberExpression,
+        BinaryExpression,
     }
     class SyntaxToken {
         public SyntaxToken(SyntaxKind kind, int position, string text, object value) {
@@ -56,6 +77,7 @@ namespace mc {
         public Lexer(string text) {
             _text = text;
         }
+
         private char Current {
             get {
                 if (_position >= _text.Length) {
@@ -76,6 +98,7 @@ namespace mc {
 
             if (char.IsDigit(Current)) {
                 var start = _position;
+
                 while (char.IsDigit(Current)) {
                     Next();
                 }
@@ -87,13 +110,14 @@ namespace mc {
 
             if (char.IsWhiteSpace(Current)) {
                 var start = _position;
+
                 while (char.IsWhiteSpace(Current)) {
                     Next();
                 }
                 var length = _position - start;
                 var text = _text.Substring(start, length);
                 int.TryParse(text, out var value);
-                return new SyntaxToken(SyntaxKind.WhiteSpaceToken, start, text, value);
+                return new SyntaxToken(SyntaxKind.WhiteSpaceToken, start, text, null);
             }
 
             if (Current == '+') {
@@ -113,5 +137,67 @@ namespace mc {
 
 
         }
+    }
+
+    abstract class SyntaxNode {
+        public abstract SyntaxKind Kind {get;}
+    }
+
+    abstract class ExpressionSyntax : SyntaxNode {
+    }
+
+    sealed class NumberExpressionSyntax : ExpressionSyntax {
+        public NumberExpressionSyntax(SyntaxToken numberToken) {
+
+        }
+        public override SyntaxKind Kind => SyntaxKind.NumberExpression;
+        
+        public SyntaxToken NumberToken {get;}
+    }
+
+    sealed class BinaryExpressionSyntax : ExpressionSyntax {
+        public BinaryExpressionSyntax(ExpressionSyntax left, SyntaxNode operatorToken, ExpressionSyntax right) {
+            Left = left;
+            OperatorToken = operatorToken;
+            Right = right;
+        }
+        
+        public override SyntaxKind Kind => SyntaxKind.BinaryExpression;
+        public ExpressionSyntax Left {get;}
+        public SyntaxNode OperatorToken {get;}
+        public ExpressionSyntax Right {get;}
+
+    }
+    class Parser {
+        private readonly SyntaxToken[] _tokens;
+        private int _position;
+
+        public Parser(string text) {
+            var tokens = new List<SyntaxToken>();
+
+            var lexer = new Lexer(text);
+            SyntaxToken token;
+            do{
+                token = lexer.NextToken();
+
+                if (token.Kind != SyntaxKind.WhiteSpaceToken && 
+                    token.Kind != SyntaxKind.InvalidToken) {
+                        tokens.Add(token);
+                    }
+            } while (token.Kind != SyntaxKind.EndOfFileToken);
+            
+            _tokens = tokens.ToArray();
+        }
+
+        private SyntaxToken Peek(int offset) {
+            var index = _position + offset;
+
+            if (index >= _tokens.Length) {
+                return _tokens[_tokens.Length -1 ];
+            }
+            return _tokens[index];
+        }
+
+        private SyntaxToken Current => Peek(0);
     }
 }
