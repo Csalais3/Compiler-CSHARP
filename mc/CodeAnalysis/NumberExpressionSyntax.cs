@@ -1,16 +1,18 @@
 namespace Compiler.CodeAnalysis
 {
-    sealed class NumberExpressionSyntax : ExpressionSyntax {
-    public NumberExpressionSyntax(SyntaxToken numberToken) {
-        NumberToken = numberToken;
-    }
-    public override SyntaxKind Kind => SyntaxKind.NumberExpression;
-    
-    public SyntaxToken NumberToken {get;}
-
-    public override IEnumerable<SyntaxNode> GetChildren()
+    sealed class NumberExpressionSyntax : ExpressionSyntax 
     {
-        yield return NumberToken;
+        public NumberExpressionSyntax(SyntaxToken numberToken) 
+        {
+            NumberToken = numberToken;
+        }
+        public override SyntaxKind Kind => SyntaxKind.NumberExpression;
+    
+        public SyntaxToken NumberToken {get;}
+
+        public override IEnumerable<SyntaxNode> GetChildren()
+        {
+            yield return NumberToken;
+        }
     }
-}
 }

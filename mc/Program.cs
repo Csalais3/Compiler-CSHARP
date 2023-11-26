@@ -38,7 +38,7 @@ class Program {
                 showTree = !showTree;
                 Console.WriteLine(showTree ? "Now showing parse trees." : "No longer showing parse trees");
                 continue;
-            } else if (line == "cls") {
+            } else if (line == "#cls") {
                 Console.Clear();
                 continue;
             }
